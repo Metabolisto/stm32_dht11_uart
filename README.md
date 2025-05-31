@@ -23,7 +23,6 @@
 
 При ошибке (нет ответа или некорректная контрольная сумма) отправляется строка `“DHT11 Error!\r\n”`.
 
----
 ## Структура проекта
 ```
 stm32-dht11-uart/
@@ -71,24 +70,29 @@ GND всех устройств объединены.
 
 Примечание: перед подключением убедитесь, что на линии DHT11 есть подтягивающий резистор (~4.7 кΩ или 10 кΩ).
 
-## Конфигурация STM32CubeMX
-1. Системный тактовый генератор (RCC)
-  HSE = 8 MHz
-  PLL ×9 → SYSCLK = 72 MHz
+ - [Монтажная схема](https://github.com/user-attachments/assets/6f4d5bcc-cd08-4d18-9db2-8c4958182d57)
+ - [Подключение ST-LINK V2](https://github.com/user-attachments/assets/11cf20ef-1757-43f4-bd80-f0e9caa32841)
+ - [Подключение USB-UART CH340G](https://github.com/user-attachments/assets/635f70f6-237e-441c-b5aa-54983d74e659)
 
-2. MX_USART1_UART_Init()
-  Instance: USART1
-  BaudRate: 115200
-  Word Length: 8 Bits
-  Stop Bits: 1 Bit
-  Parity: None
-  Mode: TX only (поскольку RX не используется)
+## Конфигурация STM32CubeMX  
 
-3. MX_GPIO_Init()
-  PA9 — AF Push-Pull (UART1 TX)
-  PA10 — AF Input (UART1 RX) (однако RX не задействован)
-  PB5 — GPIO Input/Output (будет перенастроен программно)
-  Остальные пины оставлены по умолчанию (Analog / No Pull)
+1. **Системный тактовый генератор (RCC)**  
+   HSE = 8 MHz  
+   PLL ×9 → SYSCLK = 72 MHz  
+
+2. **MX_USART1_UART_Init()**  
+   - Instance: USART1  
+   - BaudRate: 115200  
+   - Word Length: 8 Bits  
+   - Stop Bits: 1 Bit  
+   - Parity: None  
+   - Mode: TX only (поскольку RX не используется)  
+
+3. **MX_GPIO_Init()**  
+   - PA9 — AF Push-Pull (UART1 TX)  
+   - PA10 — AF Input (UART1 RX) (однако RX не задействован)  
+   - PB5 — GPIO Input/Output (будет перенастроен программно)  
+   - Остальные пины оставлены по умолчанию (Analog / No Pull)
 
 ## Зависимости
 
@@ -106,26 +110,29 @@ GND всех устройств объединены.
 
 2. Нажмите “Generate Code” (если вы внесли изменения в CubeMX).
 
-3. Соберите проект:
+3. Соберите проект:  
 Build → Build Project   (Ctrl+Shift+B) 
 
-4. Подключите ST-Link V2 и загрузите прошивку:
-Run → Debug   (или Ctrl+F11) 
+4. Подключите ST-Link V2 и загрузите прошивку:  
+Run → Debug   (или Ctrl+F11)  
 После успешной загрузки прошивки MCU перейдёт в режим исполнения.
 
 5. Подключите USB-UART конвертер (CH340G) к PA9 (TX) и GND.
 
-6. Запустите любой терминал (например, PuTTY, Tera Term или UART Assistant) с параметрами:
+6. Запустите любой терминал (например, PuTTY, Tera Term или UART Assistant) с параметрами:  
  - Скорость: 115200 бод
  - Формат: 8 датабит, Без четности, 1 стопбит (8N1)
 
-7. При перезапуске STM32 в терминале начнут появляться строки:
-" Temp: 23 C, Hum: 45 % "
-" Temp: 24 C, Hum: 45 % "
-При ошибке чтения DHT11 вы увидите:
-" DHT11 Error! "
+7. При перезапуске STM32 в терминале начнут появляться строки:  
+" Temp: 23 C, Hum: 45 % "  
+" Temp: 24 C, Hum: 45 % "  
+При ошибке чтения DHT11 вы увидите:  
+" DHT11 Error! "  
 
-...
+## Фото
+[Терминал UART](https://github.com/user-attachments/assets/f2a5f389-6457-4f75-9f6d-80e8b486abe2)
+[В сборе](https://github.com/Metabolisto/stm32_adc_uart_hal)
+
 ## Связанные проекты
 
-- [STM32 ADC + UART (HAL)](https:github.com/Metabolisto/stm32_adc_uart_hal) 
+- [STM32 ADC + UART (HAL)](https://github.com/Metabolisto/stm32_adc_uart_hal)
