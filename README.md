@@ -130,9 +130,10 @@ Run → Debug   (или Ctrl+F11)
 " DHT11 Error! "  
 
 ## Фото  
+
  - [Терминал UART](https://github.com/user-attachments/assets/f2a5f389-6457-4f75-9f6d-80e8b486abe2)  
  - [В сборе](https://github.com/user-attachments/assets/f87c732d-34a3-491a-b948-3b8e710a2efd)
 
 ## Связанные проекты  
 
- - [STM32 ADC + UART (HAL)](https://github.com/Metabolisto/stm32_adc_uart_hal)
+ - [STM32 ADC + UART (HAL)](https://github.com/Metabolisto/stm32-adc-uart-hal)
