@@ -1,69 +1,30 @@
-#settings
-.settings/
-
-#metadata
-.metadata/
-
-# Prerequisites
-*.d
-
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-*.bin
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-Debug/
-debug/
-Release/
-release
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
-
-build/
-*.launch
+# IDE-specific files and settings
 .settings/
 .project
 .cproject
+*.launch
+*.log
+
+# Build artifacts
+build/
+Debug/
+Release/
+*.o
+*.d
+*.elf
+*.hex
+*.bin
+*.map
+*.list
+
+# User/editor-specific files
+*.swp
+*.swo
+*.swn
+*.DS_Store
+*.bak
+
+# Backup or temp files
+*~
+*.tmp
+*.ioc.bak

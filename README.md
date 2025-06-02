@@ -5,7 +5,7 @@
 ## Платформа и инструменты
 
 - **Микроконтроллер:** STM32F103C8T6 („Blue Pill“)  
-- **IDE:** STM32CubeIDE (v1.x)  
+- **IDE:** STM32CubeIDE (v1.17.0)  
 - **Библиотеки:** STM32 HAL (STM32CubeMX-генерация)  
 - **Отладка:** ST-Link V2  
 - **Язык:** C (GCC)  
